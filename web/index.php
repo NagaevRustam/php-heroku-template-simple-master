@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
+
 <!-- 
 (ВЫПОЛНЕНО)1) Заведите публичный репозиторий на GitHub для этой работы.
 (ВЫПОЛНЕНО)2) Скачайте шаблон приложения.
@@ -36,6 +37,10 @@
 <?php endif; ?>
 
 <?php
+    $name = 'Rustam';
+    $value = 'Author: Nagaev Rustam';
+    setcookie($name, $value);
+
     include 'post.php';
 
     if (isset($_SESSION['username'])) {
