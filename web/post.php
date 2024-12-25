@@ -1,13 +1,14 @@
 <?php
 session_start();
-if (!empty($_POST['username'])) { 
-    // Cоздайте PHP-файл post.php, который будет принимать формы, сохранять имя пользователя в сессию и перенаправлять браузер обратно на index.php.
+if (!empty($_POST['username'])) {//Если переменная не пуста, вернуть true, и выполнить следующее
     $_SESSION['username'] = $_POST['username'];
+    header('Location: index.php');
+    exit();
 } else {
     echo 'Пользователь не зарегистрирован';
 }
+?>
 
-echo '<pre>';
-//print_r($_POST);
-//print_r($_SESSION);
-echo '<pre>';
+<form action="index.php" method="post" enctype="multipart/form-data">
+    <button type="submit" value="Назад">Назад</button>
+</form>
