@@ -13,7 +13,7 @@
 ?>
 
 <?php if (empty($_SESSION['username'])): ?>
-    <form action="post.php" method="post" >
+    <form action="post.php" method="post" enctype="multipart/form-data">
         <label for="text">Имя пользователя:</label>
         <input type="text" id="name" name="username">
         <br>
