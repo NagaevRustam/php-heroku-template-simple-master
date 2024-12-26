@@ -19,11 +19,12 @@
         <br>
         <button type="submit" value="Отправить">Загрузить</button>
     </form>
-<?php else: ?>
+<?php else : ?>
     <?php echo 'Привет, ' . $_SESSION['username']; ?>
     <form action="exit.php" method="post" enctype="multipart/form-data">
         <button type="submit" value="Exit">Exit</button>
     </form>
 <?php endif; ?>
+
 </body>
 </html>
