@@ -6,33 +6,26 @@
 </head>
 <body>
 <?php
+    session_start();
     $name = 'Rustam';
     $value = 'Author: Nagaev Rustam';
     setcookie($name, $value);
 ?>
 
-<!--Если переменная пуста или не существует, вернуть true, и выполнить следующее-->
-<?php if (empty($_POST['username'])): ?>
-    <form action="post.php" method="post" enctype="multipart/form-data">
+<?php if (empty($_SESSION['username'])): ?>
+    <form action="post.php" method="post" >
         <label for="text">Имя пользователя:</label>
         <input type="text" id="name" name="username">
         <br>
         <button type="submit" value="Отправить">Загрузить</button>
     </form>
-    <?php else: ?>
+<?php else: ?>
+    <?php
+        echo 'Привет, ' . $_SESSION['username'];
+    ?>
     <form action="exit.php" method="post" enctype="multipart/form-data">
         <button type="submit" value="Exit">Exit</button>
     </form>
 <?php endif; ?>
-
-<!--isset - проверяет, существует ли переменная (объявлена ли она), она может быть пустой-->
-
-<?php
-
-include 'post.php';
-echo 'Информация';
-echo ($_POST['username']);
-echo ($_SESSION['username']);
-?>
 </body>
 </html>
